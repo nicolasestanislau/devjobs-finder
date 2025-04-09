@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Input } from "./components/ui/input";
 import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
+import { ModeToggle } from "./components/mode-toggle";
 
 interface Job {
   id: number;
@@ -178,7 +179,6 @@ export default function Home() {
                     publication_date: "2025-01-14T06:50:29",
                     candidate_required_location: "Germany",
                     salary: "",
-                    description: "",
                   },
                 ],
               }),
@@ -246,86 +246,103 @@ export default function Home() {
   };
 
   return (
-    <div className="p-4 max-w-3xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">DevJobs Finder</h1>
-      <Input
-        placeholder="Buscar por vaga, empresa ou categoria"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className="mb-6"
-        data-testid="search-input"
-      />
+    <main className="min-h-screen bg-background w-full">
+      <div className="relative w-full">
+        {/* Header with background pattern */}
+        <div className="h-[160px] bg-gradient-to-r from-indigo-600 to-violet-600 w-full relative overflow-hidden">
+          <div className="container mx-auto px-4 h-full flex items-center justify-between">
+            <h1 className="text-2xl font-bold text-white">DevJobs Finder</h1>
+            <ModeToggle />
+          </div>
+        </div>
+        <div className="p-4 w-full">
+          <Input
+            placeholder="Buscar por vaga, empresa ou categoria"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="mb-6 border-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+            data-testid="search-input"
+          />
 
-      {loading ? (
-        <p className="text-center py-4">Carregando vagas...</p>
-      ) : error ? (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-          <p>{error}</p>
-        </div>
-      ) : filteredJobs.length === 0 ? (
-        <p className="text-center py-4">Nenhuma vaga encontrada.</p>
-      ) : (
-        <div className="space-y-4" data-testid="job-list">
-          {Array.isArray(filteredJobs) &&
-            filteredJobs.map((job) => (
-              <Card key={job.id} className="hover:shadow-md transition-shadow">
-                <CardContent className="p-4">
-                  <div className="flex items-start gap-4">
-                    {job.company_logo && (
-                      <img
-                        src={job.company_logo}
-                        alt={`Logo ${job.company_name}`}
-                        className="w-12 h-12 object-contain"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).style.display = "none";
-                        }}
-                      />
-                    )}
-                    <div className="flex-1">
-                      <h2 className="text-lg font-semibold">{job.title}</h2>
-                      <p className="text-sm text-gray-500">
-                        {job.company_name}
-                      </p>
-                      <div className="flex flex-wrap gap-2 mt-2">
-                        <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
-                          {job.job_type}
-                        </span>
-                        <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">
-                          {job.category}
-                        </span>
-                        {job.salary && (
-                          <span className="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">
-                            {job.salary}
-                          </span>
+          {loading ? (
+            <p className="text-center py-4">Carregando vagas...</p>
+          ) : error ? (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+              <p>{error}</p>
+            </div>
+          ) : filteredJobs.length === 0 ? (
+            <p className="text-center py-4">Nenhuma vaga encontrada.</p>
+          ) : (
+            <div
+              className="flex flex-col md:grid md:grid-cols-3 gap-4"
+              data-testid="job-list"
+            >
+              {Array.isArray(filteredJobs) &&
+                filteredJobs.map((job) => (
+                  <Card
+                    key={job.id}
+                    className="hover:shadow-md transition-shadow"
+                  >
+                    <CardContent className="p-4">
+                      <div className="flex items-start gap-4">
+                        {job.company_logo && (
+                          <img
+                            src={job.company_logo}
+                            alt={`Logo ${job.company_name}`}
+                            className="w-12 h-12 object-contain"
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).style.display =
+                                "none";
+                            }}
+                          />
                         )}
+                        <div className="flex-1">
+                          <h2 className="text-lg font-semibold">{job.title}</h2>
+                          <p className="text-sm text-gray-500">
+                            {job.company_name}
+                          </p>
+                          <div className="flex flex-wrap gap-2 mt-2">
+                            <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                              {job.job_type}
+                            </span>
+                            <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">
+                              {job.category}
+                            </span>
+                            {job.salary && (
+                              <span className="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">
+                                {job.salary}
+                              </span>
+                            )}
+                          </div>
+                          {job.candidate_required_location && (
+                            <p className="text-sm mt-2">
+                              <span className="font-medium">Localização:</span>{" "}
+                              {job.candidate_required_location}
+                            </p>
+                          )}
+                          {job.publication_date && (
+                            <p className="text-xs text-gray-500 mt-1">
+                              Publicado em: {formatDate(job.publication_date)}
+                            </p>
+                          )}
+                          <div className="mt-3">
+                            <a
+                              href={job.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <Button className="mt-2 dark-mode">Ver vaga</Button>
+                            </a>
+                          </div>
+                        </div>
                       </div>
-                      {job.candidate_required_location && (
-                        <p className="text-sm mt-2">
-                          <span className="font-medium">Localização:</span>{" "}
-                          {job.candidate_required_location}
-                        </p>
-                      )}
-                      {job.publication_date && (
-                        <p className="text-xs text-gray-500 mt-1">
-                          Publicado em: {formatDate(job.publication_date)}
-                        </p>
-                      )}
-                      <div className="mt-3">
-                        <a
-                          href={job.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Button className="mt-2">Ver vaga</Button>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                    </CardContent>
+                  </Card>
+                ))}
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </div>
+    </main>
   );
 }
