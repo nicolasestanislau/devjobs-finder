@@ -1,28 +1,28 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState, useEffect } from "react"
-import { Search } from "lucide-react"
-import { Input } from "./ui/input"
-import { Button } from "./ui/button"
+import { useState, useEffect } from "react";
+import { Search } from "lucide-react";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
 
 interface SearchBarProps {
-  initialValue: string
-  onSearch: (query: string) => void
+  initialValue: string;
+  onSearch: (query: string) => void;
 }
 
 export default function SearchBar({ initialValue, onSearch }: SearchBarProps) {
-  const [searchQuery, setSearchQuery] = useState(initialValue)
+  const [searchQuery, setSearchQuery] = useState(initialValue);
 
   useEffect(() => {
-    setSearchQuery(initialValue)
-  }, [initialValue])
+    setSearchQuery(initialValue);
+  }, [initialValue]);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    onSearch(searchQuery)
-  }
+    e.preventDefault();
+    onSearch(searchQuery);
+  };
 
   return (
     <form onSubmit={handleSubmit} className="flex w-full">
@@ -41,5 +41,5 @@ export default function SearchBar({ initialValue, onSearch }: SearchBarProps) {
         Search
       </Button>
     </form>
-  )
+  );
 }

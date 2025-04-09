@@ -13,7 +13,7 @@ export function ModeToggle() {
       aria-label="Toggle theme"
     >
       {theme === "light" ? (
-        <Sun aria-hidden="true" />
+        <Sun aria-hidden="true" className="scale-100" />
       ) : (
         <Moon
           className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"

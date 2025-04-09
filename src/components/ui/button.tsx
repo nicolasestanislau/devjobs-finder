@@ -47,10 +47,8 @@ function Button({
   }) {
   const Comp = asChild ? Slot : "button";
   
-  // Verificar se o tema escuro está ativo
   const isDarkMode = document.documentElement.classList.contains("dark");
   
-  // Adicionar classes específicas para o tema escuro
   const darkModeClasses = isDarkMode ? "dark-mode" : "";
 
   return (
