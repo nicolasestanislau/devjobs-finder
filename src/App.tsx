@@ -181,13 +181,13 @@ export default function Home() {
                     salary: "",
                   },
                   {
-                    "id": 1956254,
-                    "url": "https://remotive.com/remote-jobs/software-dev/ai-data-leader-1956254",
-                    "title": "AI Data Leader",
-                    "company_name": "1848 Ventures",
-                    "company_logo": "https://remotive.com/job/1956254/logo",
-                    "category": "Software Development",
-                    "tags": [
+                    id: 1956254,
+                    url: "https://remotive.com/remote-jobs/software-dev/ai-data-leader-1956254",
+                    title: "AI Data Leader",
+                    company_name: "1848 Ventures",
+                    company_logo: "https://remotive.com/job/1956254/logo",
+                    category: "Software Development",
+                    tags: [
                       "data science",
                       "saas",
                       "security",
@@ -199,75 +199,68 @@ export default function Home() {
                       "backbone",
                       "infrastructure",
                       "diversity",
-                      "travel"
+                      "travel",
                     ],
-                    "job_type": "full_time",
-                    "publication_date": "2024-12-09T22:50:34",
-                    "candidate_required_location": "USA",
-                    "salary": "competitive salary with benefits"
+                    job_type: "full_time",
+                    publication_date: "2024-12-09T22:50:34",
+                    candidate_required_location: "USA",
+                    salary: "competitive salary with benefits",
                   },
                   {
-                    "id": 1954323,
-                    "url": "https://remotive.com/remote-jobs/all-others/senior-artist-prototyping-1954323",
-                    "title": "Senior Artist - Prototyping",
-                    "company_name": "ZeptoLab",
-                    "company_logo": "https://remotive.com/job/1954323/logo",
-                    "category": "All others",
-                    "tags": [
-                      "unity",
-                      "adobe photoshop"
-                    ],
-                    "job_type": "contract",
-                    "publication_date": "2024-12-09T18:51:19",
-                    "candidate_required_location": "Europe",
-                    "salary": ""
+                    id: 1954323,
+                    url: "https://remotive.com/remote-jobs/all-others/senior-artist-prototyping-1954323",
+                    title: "Senior Artist - Prototyping",
+                    company_name: "ZeptoLab",
+                    company_logo: "https://remotive.com/job/1954323/logo",
+                    category: "All others",
+                    tags: ["unity", "adobe photoshop"],
+                    job_type: "contract",
+                    publication_date: "2024-12-09T18:51:19",
+                    candidate_required_location: "Europe",
+                    salary: "",
                   },
                   {
-                    "id": 1955360,
-                    "url": "https://remotive.com/remote-jobs/data/analytics-engineer-1955360",
-                    "title": "Analytics Engineer",
-                    "company_name": "Firsthand",
-                    "company_logo": "https://remotive.com/job/1955360/logo",
-                    "category": "Data Analysis",
-                    "tags": [
-                      "git",
-                      "sql",
-                      "bash"
-                    ],
-                    "job_type": "full_time",
-                    "publication_date": "2024-12-09T18:51:09",
-                    "candidate_required_location": "USA",
-                    "salary": "base, equity, and performance bonus potential"
+                    id: 1955360,
+                    url: "https://remotive.com/remote-jobs/data/analytics-engineer-1955360",
+                    title: "Analytics Engineer",
+                    company_name: "Firsthand",
+                    company_logo: "https://remotive.com/job/1955360/logo",
+                    category: "Data Analysis",
+                    tags: ["git", "sql", "bash"],
+                    job_type: "full_time",
+                    publication_date: "2024-12-09T18:51:09",
+                    candidate_required_location: "USA",
+                    salary: "base, equity, and performance bonus potential",
                   },
                   {
-                    "id": 1953810,
-                    "url": "https://remotive.com/remote-jobs/finance-legal/ssr-finance-operations-analyst-1953810",
-                    "title": "SSr Finance & Operations Analyst",
-                    "company_name": "Moovx",
-                    "company_logo": "https://remotive.com/job/1953810/logo",
-                    "category": "Finance / Legal",
-                    "tags": [
+                    id: 1953810,
+                    url: "https://remotive.com/remote-jobs/finance-legal/ssr-finance-operations-analyst-1953810",
+                    title: "SSr Finance & Operations Analyst",
+                    company_name: "Moovx",
+                    company_logo: "https://remotive.com/job/1953810/logo",
+                    category: "Finance / Legal",
+                    tags: [
                       "accounting",
                       "admin",
                       "AWS",
                       "agile",
                       "payroll",
                       "apollo",
-                      "insurance"
+                      "insurance",
                     ],
-                    "job_type": "full_time",
-                    "publication_date": "2024-12-09T16:51:14",
-                    "candidate_required_location": "LATAM",
-                    "salary": "competitive salaries throughout latam (usd)"
+                    job_type: "full_time",
+                    publication_date: "2024-12-09T16:51:14",
+                    candidate_required_location: "LATAM",
+                    salary: "competitive salaries throughout latam (usd)",
                   },
                   {
-                    "id": 1955777,
-                    "url": "https://remotive.com/remote-jobs/project-management/senior-implementation-manager-1955777",
-                    "title": "Senior Implementation Manager",
-                    "company_name": "Abridge",
-                    "company_logo": "https://remotive.com/job/1955777/logo",
-                    "category": "Project Management",
-                    "tags": [
+                    id: 1955777,
+                    url: "https://remotive.com/remote-jobs/project-management/senior-implementation-manager-1955777",
+                    title: "Senior Implementation Manager",
+                    company_name: "Abridge",
+                    company_logo: "https://remotive.com/job/1955777/logo",
+                    category: "Project Management",
+                    tags: [
                       "excel",
                       "go",
                       "security",
@@ -281,15 +274,14 @@ export default function Home() {
                       "testing",
                       "diversity",
                       "travel",
-                      "insurance"
+                      "insurance",
                     ],
-                    "job_type": "full_time",
-                    "publication_date": "2024-12-09T16:51:01",
-                    "candidate_required_location": "USA",
-                    "salary": "equity and benefits included"
-                  },]
-
-
+                    job_type: "full_time",
+                    publication_date: "2024-12-09T16:51:01",
+                    candidate_required_location: "USA",
+                    salary: "equity and benefits included",
+                  },
+                ],
               }),
           });
         } else {
@@ -440,7 +432,9 @@ export default function Home() {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              <Button className="mt-2 dark-mode">Ver vaga</Button>
+                              <Button className="mt-2 dark-mode">
+                                Ver vaga
+                              </Button>
                             </a>
                           </div>
                         </div>
