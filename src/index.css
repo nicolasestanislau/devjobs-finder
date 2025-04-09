@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -66,9 +64,9 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  width: 100%;
 }
 
 h1 {
@@ -187,4 +185,25 @@ button:focus-visible {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Adicionando estilos para garantir que o tema escuro seja aplicado corretamente */
+:root.dark {
+  color-scheme: dark;
+}
+
+:root.light {
+  color-scheme: light;
+}
+
+/* Classe específica para o tema escuro */
+.dark-mode {
+  @apply dark:bg-gray-800 dark:text-white;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
